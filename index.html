@@ -4,17 +4,17 @@
 		<script src="https://unpkg.com/konva@7.2.5/konva.min.js"></script>
 		<meta charset="utf-8" />
 		<title>Konva Drag and Drop Demo</title>
+	
 		<link rel="stylesheet" href="style.css"> 
 	</head>
-	<body 
+	<body oncopy="return false"
 		<div class="container">
 		  <div class="split left">
-			
 			<h1>Generuj klocek</h1>
-    <a  id="button" class="button">Przycisk</a>
+			<a type="button" id="button" class="button">Przycisk</a>
 		  </div>
 		  <div class="split right">
-			<div id="container" style="border:1px solid #000000;"></div>
+			<div id="container" style="border:20px solid #FFFF00;"></div>
 		  </div>
 		</div>
 		<script src="myscript.js"></script>
@@ -24,8 +24,8 @@
 
       var stage = new Konva.Stage({
         container: 'container',
-        width: width,
-        height: height,
+        width: width*0.8,
+        height: height*0.8,
 		margin:0,
       });
 
