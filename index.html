@@ -4,26 +4,20 @@
 		<script src="https://unpkg.com/konva@7.2.5/konva.min.js"></script>
 		<meta charset="utf-8" />
 		<title>Konva Drag and Drop Demo</title>
-		<style>
-		  body {
-			height: 20%;
-			width: 20%;
-			background-color: #f0f0f0;
-			
-		  }
-
-		  #button {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-		  }
-		</style>
+		<link rel="stylesheet" href="style.css"> 
 	</head>
 	<body 
-		<div>
-			<input type="button" id="button" value="Add random shape" />
+		<div class="container">
+		  <div class="split left">
+			
+			<h1>Generuj klocek</h1>
+    <a  id="button" class="button">Przycisk</a>
+		  </div>
+		  <div class="split right">
+			<div id="container" style="border:1px solid #000000;"></div>
+		  </div>
 		</div>
-		<div id="container" style="border:1px solid #000000;"></div>
+		<script src="myscript.js"></script>
 		<script>
       var width = window.innerWidth;
       var height = window.innerHeight;
@@ -32,22 +26,14 @@
         container: 'container',
         width: width,
         height: height,
+		margin:0,
       });
 
       var layer = new Konva.Layer();
       var rectX = stage.width() / 2 - 50;
       var rectY = stage.height() / 2 - 25;
 
-      var box = new Konva.Rect({
-        x: rectX,
-        y: rectY,
-        width: 100,
-        height: 50,
-        fill: '#00D2FF',
-        stroke: 'black',
-        strokeWidth: 4,
-        draggable: true,
-      });
+      var box = new Konva.Rect();
 
       // add cursor styling
       box.on('mouseover', function () {
@@ -72,7 +58,7 @@
         layer.add(
           new Konva.Rect({
             x: Math.random() * 100,
-            y: Math.random() * 100,
+            y: Math.random() * 180,
 			width: 100,
             height: 100,
             fill: Konva.Util.getRandomColor(),
